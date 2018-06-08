@@ -1,0 +1,54 @@
+<p>Name: Harshad</p>
+
+<table [ngClass]="{'bg-red': percentage < 40 , 'bg-green': percentage > 40, 'bg-white': percentage == 0}">
+  <th>Subject Name</th>
+  <th>Marks</th>
+  <th>Out of</th>
+
+  <tr>
+    <td>Marathi</td>
+    <td><input type="number"  #marathi></td>
+    <td>100</td>
+  </tr>
+
+  <tr>
+    <td>Hindi</td>
+    <td><input type="number" #hindi></td>
+    <td>100</td>
+  </tr>
+
+  <tr>
+    <td>English</td>
+    <td><input type="number" #english></td>
+    <td>100</td>
+  </tr>
+
+  <tr>
+    <td>Sanskrit</td>
+    <td><input type="number" #sanskrit></td>
+    <td>100</td>
+  </tr>
+
+  <tr>
+    <td>Maths</td>
+    <td><input type="number" #maths></td>
+    <td>100</td>
+  </tr>
+  <tr>
+    <td >Total</td>
+    <td>{{total}}</td>
+    <td>500</td>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: center">Percentage :- {{percentage}}</td>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: center">Grade :- {{gradeName}}</td>
+  </tr>
+</table>
+<h1 *ngIf="percentage > 0 && percentage < 40">Ooops Faild... </h1>
+<h1 *ngIf="percentage >= 40">Hurreyy Passed... </h1>
+<br>
+<button (click)="calculateTotal(marathi.value,hindi.value,english.value,sanskrit.value,maths.value)">Total</button>
+<button (click)="calculatePercentage()" [disabled]="total == 0">Percentage</button>
+<button (click)="calculateGrade()" [disabled]="percentage == 0">Grade</button>
