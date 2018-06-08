@@ -1,3 +1,37 @@
-<p>
-  calculator works!
-</p>
+<div>  
+  <h3>Calculator</h3>
+  <table>
+    <tr>
+      <td colspan="4"><input placeholder="0" [(ngModel)]="result" type="text" [disabled]=true></td>
+    </tr>
+
+    <tr>
+      <td><button (click)="result = result + '1'">1</button></td>
+      <td><button (click)="result = result + '2'">2</button></td>
+      <td><button (click)="result = result + '3'">3</button></td>
+      <td><button (click)="result = result + '+'">+</button></td>
+    </tr>
+
+    <tr>
+        <td><button (click)="result = result + '4'">4</button></td>
+        <td><button (click)="result = result + '5'">5</button></td>
+        <td><button (click)="result = result + '6'">6</button></td>
+        <td><button (click)="result = result + '-'">-</button></td>
+      </tr>
+
+      <tr>
+          <td><button (click)="result = result + '7'">7</button></td>
+          <td><button (click)="result = result + '8'">8</button></td>
+          <td><button (click)="result = result + '9'">9</button></td>
+          <td><button (click)="result = result + '*'">x</button></td>
+        </tr>
+
+        <tr>
+            <td><button (click)="result = ''">C</button></td>
+            <td><button (click)="result = result + '0'">0</button></td>
+            <td><button (click)="getResult()">=</button></td>
+            <td><button (click)="result = result + '/'">/</button></td>
+          </tr>
+  </table>
+
+</div>
